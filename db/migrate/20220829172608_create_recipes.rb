@@ -6,7 +6,7 @@ class CreateRecipes < ActiveRecord::Migration[7.0]
       t.integer :cooking_time
       t.text :description
       t.boolean :public
-      t.integer :user_id
+      t.integer :user_id, null: false
 
       t.timestamps
     end
