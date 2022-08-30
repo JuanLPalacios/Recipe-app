@@ -5,15 +5,14 @@
   Add Food
 <% end %>
 <ul>
+  <li>
+    <span>Food</span>
+    <span>Measurement unit</span>
+    <span>Unit price</span>
+    <span>Quantity</span>
+    <span>Actions</span>
+  </li>
   <% @foods.each do |food| %>
-    <li>
-      <span>Food</span>
-      <span>Measurement unit</span>
-      <span>Unit price</span>
-      <span>Quantity</span>
-      <span>Actions</span>
-    </li>
-
     <li>
       <span><%= food.name %></span>
       <span><%= food.measurement_unit %></span>
