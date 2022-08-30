@@ -1,6 +1,9 @@
 <h2>
   Here's a list of your foods!
 </h2>
+<%= link_to(foods_path) do %>
+  Add Food
+<% end %>
 <ul>
   <% @foods.each do |food| %>
     <li>
