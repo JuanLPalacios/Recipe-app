@@ -2,9 +2,20 @@
   Here's a list of your foods!
 </h2>
 <ul>
-  <% @foods.each |food| do %>
+  <% @foods.each do |food| %>
     <li>
-      
+      <span>Food</span>
+      <span>Measurement unit</span>
+      <span>Unit price</span>
+      <span>Quantity</span>
+      <span>Actions</span>
+    </li>
+
+    <li>
+      <span><%= food.name %></span>
+      <span><%= food.measurement_unit %></span>
+      <span><%= food.price %></span>
+      <span><%= food.quantity %></span>
     </li>
   <% end %>
 </ul>
