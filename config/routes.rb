@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/general_shopping_list'
   resources :recipes, only: [:index, :show, :destroy]
   get '/public_recipes', to: 'recipies#public_recipes'
   devise_for :users
