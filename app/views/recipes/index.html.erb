@@ -1,10 +1,20 @@
-<% @recipes.each do |recipe| %>
-  <%= link_to recipe do %>
-    <%= recipe.name %>
-    <%= recipe.description %>
+<section class="recipies-list">
+  <% @recipes.each do |recipe| %>
+    <article>
+      <%= link_to recipe do %>
+        <h2>
+          <%= recipe.name %>
+        </h2>
+        <div>
+          <%= recipe.description %>
+        </div>
+      <% end %>
+      <%# Deletete button must be oudside of link to work %>
+      <% if can? :destroy, recipe %>
+        <div class="actions">
+          <%= button_to "Delete", recipe, method: :delete, confirm: "Are you sure You want to delete this recipe?" %>
+        </div>
+      <% end %>
+    </article>
   <% end %>
-  <%# Deletete button must be oudside of link to work %>
-  <% if can? :destroy, recipe %>
-    <%= button_to "Delete", recipe, method: :delete, confirm: "Are you sure You want to delete this recipe?" %>
-  <% end %>
-<% end %>
+</section>
