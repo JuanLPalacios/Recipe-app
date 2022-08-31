@@ -5,7 +5,7 @@
 }
 
 .switch-wrapper label {
-  color: #666666;
+  color: #666;
 }
 
 .switch {
@@ -30,12 +30,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #dddddddd;
+  background-color: #dddd;
   transition: 0.4s;
-  border: 3px solid #dddddd;
+  border: 3px solid #ddd;
 }
 
-.switch .slider:before {
+.switch .slider::before {
   position: absolute;
   display: inline-block;
   content: "";
@@ -51,17 +51,6 @@
   border: 2px solid #2a50fa;
 }
 
-.switch input[type=checkbox]:checked + .slider:before {
+.switch input[type=checkbox]:checked + .slider::before {
   transform: translateX(calc(100% + 3px));
 }
-
-/*
-.switch .slider {
-  display: inline-block;
-  position: relative;
-  height: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-color: white;
-}
-*/
