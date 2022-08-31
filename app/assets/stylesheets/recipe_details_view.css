@@ -1,0 +1,18 @@
+.preparation-public {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.time-description p {
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.time-description p::before {
+  display: block;
+  content: 'Description';
+  color: #aaaaaa;
+  margin-bottom: 0.5em;
+}
