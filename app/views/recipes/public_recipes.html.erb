@@ -4,7 +4,7 @@
   <%= link_to recipe do %>
     <%= recipe.name %>
     Total food items: <%= recipe.foods.length %>
-    Total price: <%= recipe.foods.map.inject(0, :+) { |food| food.price } %>
+    Total price: <%= recipe.recipe_foods.inject(0) { |sum, recipe_food| sum + recipe_food.quantity*recipe_food.food.price } %>
     By: <%= recipe.user.name %>
   <% end %>
 <% end %>
