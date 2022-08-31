@@ -1,0 +1,48 @@
+<h2><%= @recipe.name %></h2>
+<div>
+  <h4>
+    Preparation time: 
+    <span>
+      <%= @recipe.preparetion_time %>
+    </span>
+  </h4>
+
+  <%= form_with do |form| %>
+    <%= form.label :public, "Public:" %>
+    <%= form.check_box :public %>
+  <% end %>
+</div>
+<h4>
+  Cooking time: 
+  <span>
+    <%= @recipe.cooking_time %>
+  </span>
+</h4>
+
+<p>
+  <%= @recipe.description %>
+</p>
+
+<ul>
+  <li>
+    <h5>Food</h5>
+    <h5>Quantity</h5>
+    <h5>Value</h5>
+    <h5>Actions</h5>
+  </li>
+  <% @recipe.foods.each do |food| %>
+    <li>
+      <span><%= food.name %></span>
+      <span><%= food.quantity %></span>
+      <span>Value<%= food.price %></span>
+      <span>
+        <%= link_to(new_food_path(food)) do %>
+          Modify
+        <% end %>
+        <%= link_to(new_food_path(food)) do %>
+          Remove
+        <% end %>
+      </span>
+    </li>
+  <% end %>
+</ul>
