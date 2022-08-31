@@ -7,10 +7,14 @@
     </span>
   </h4>
 
-  <%= form_with do |form| %>
-    <%= form.label :public, "Public:" %>
-    <%= form.check_box :public %>
-  <% end %>
+  <form>
+    <label>Public</label>
+    <% if @recipe.public %>
+      <input type="checkbox" checked="true" disabled>
+    <% else %>
+      <input type="checkbox" checked="false" disabled>
+    <% end %>
+  </form>
 </div>
 <h4>
   Cooking time: 
