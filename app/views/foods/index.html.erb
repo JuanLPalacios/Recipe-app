@@ -1,11 +1,15 @@
-<h2>
+<h2 class="page-title">
   Here's a list of your foods!
 </h2>
-<%= link_to(new_food_path) do %>
-  Add Food
-<% end %>
-<ul>
-  <li>
+
+<div class="page-wrapper">
+  <%= link_to(new_food_path, class: 'button btn-blue') do %>
+    Add Food
+  <% end %>
+</div>
+
+<ul class="table">
+  <li class="table-row table-header">
     <span>Food</span>
     <span>Measurement unit</span>
     <span>Unit price</span>
@@ -13,11 +17,22 @@
     <span>Actions</span>
   </li>
   <% @foods.each do |food| %>
-    <li>
+    <li class="table-row">
       <span><%= food.name %></span>
       <span><%= food.measurement_unit %></span>
       <span><%= food.price %></span>
       <span><%= food.quantity %></span>
+      <div class="table-actions">
+        <% if can? :destroy, food %>
+          <%= 
+            button_to "Delete",
+            food,
+            method: :delete,
+            confirm: "Are you sure You want to delete this food?",
+            class: 'button btn-red' 
+          %>
+        <% end %>
+      </div>
     </li>
   <% end %>
 </ul>
