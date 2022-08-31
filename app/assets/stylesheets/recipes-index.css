@@ -28,3 +28,9 @@ section.recipies-list {
     margin-block: 0 27px;
   }
   
+  section.recipies-list > article > .actions {
+    position: absolute;
+    margin-top: -45px;
+    margin-left: 26px;
+  }
+  
