@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :recipes
   has_many :foods
+  has_many :recipe_foods, through: :foods
 
   delegate :can?, :cannot?, to: :ability
 
