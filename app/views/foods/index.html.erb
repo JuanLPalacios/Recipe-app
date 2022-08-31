@@ -1,0 +1,23 @@
+<h2>
+  Here's a list of your foods!
+</h2>
+<%= link_to(new_food_path) do %>
+  Add Food
+<% end %>
+<ul>
+  <li>
+    <span>Food</span>
+    <span>Measurement unit</span>
+    <span>Unit price</span>
+    <span>Quantity</span>
+    <span>Actions</span>
+  </li>
+  <% @foods.each do |food| %>
+    <li>
+      <span><%= food.name %></span>
+      <span><%= food.measurement_unit %></span>
+      <span><%= food.price %></span>
+      <span><%= food.quantity %></span>
+    </li>
+  <% end %>
+</ul>
