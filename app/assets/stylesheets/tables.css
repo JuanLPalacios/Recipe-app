@@ -1,0 +1,30 @@
+.table {
+  display: table;
+  margin-inline: auto;
+  width: calc(100% - 2em);
+  max-width: 1300px;
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+}
+
+.table-row {
+  display: table-row;
+  width: 100%;
+}
+
+.table-row span,
+.table-row div {
+  display: table-cell;
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+}
+
+.table-header {
+  position: sticky;
+  top: 0;
+  font-weight: 600;
+}
+
+.table-header span {
+  background-color: #efefef;
+}
