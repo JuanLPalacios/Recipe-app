@@ -28,3 +28,18 @@
 .table-header span {
   background-color: #efefef;
 }
+
+.table-row .table-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.table-row .table-actions form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
