@@ -15,8 +15,19 @@
 .table-row span,
 .table-row div {
   display: table-cell;
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
   padding: 0.5em 1em;
+}
+
+.table-row span:nth-child(1),
+.table-row div:nth-child(1) {
+  border-left: none;
+}
+
+.table-row:last-child span,
+.table-row:last-child div {
+  border-bottom: none;
 }
 
 .table-header {
