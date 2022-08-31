@@ -9,3 +9,14 @@ section.recipies-list {
     min-width: 70vw;
   }
   
+  section.recipies-list > article > a {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    text-decoration: inherit;
+    color: inherit;
+    padding: 20px;
+    border: solid 2px #000;
+    min-height: 6rem;
+  }
+  
