@@ -20,8 +20,8 @@
   padding: 0.5em 1em;
 }
 
-.table-row span:nth-child(1),
-.table-row div:nth-child(1) {
+.table-row span:first-child,
+.table-row div:first-child {
   border-left: none;
 }
 
