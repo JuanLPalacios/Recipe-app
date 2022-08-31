@@ -35,7 +35,7 @@
   color: #aaa;
 }
 
-.btn-disabled:hover { 
+.btn-disabled:hover {
   cursor: not-allowed;
 }
-.btn-disabled:active { background-color: #ddd }
+.btn-disabled:active { background-color: #ddd; }

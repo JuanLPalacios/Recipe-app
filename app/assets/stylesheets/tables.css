@@ -20,6 +20,10 @@
   padding: 0.5em 1em;
 }
 
+.table-header span {
+  background-color: #efefef;
+}
+
 .table-row span:first-child,
 .table-row div:first-child {
   border-left: none;
@@ -34,10 +38,6 @@
   position: sticky;
   top: 0;
   font-weight: 600;
-}
-
-.table-header span {
-  background-color: #efefef;
 }
 
 .table-row .table-actions {
