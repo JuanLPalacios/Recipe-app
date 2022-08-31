@@ -39,7 +39,7 @@
         <%= link_to(new_food_path(food)) do %>
           Modify
         <% end %>
-        <%= link_to(new_food_path(food)) do %>
+        <%= button_to(foods_path(food), method: :delete) do %>
           Remove
         <% end %>
       </span>
