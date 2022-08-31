@@ -3,9 +3,9 @@ class UsersController < ApplicationController
     @items = current_user.recipe_foods
       .group(:food)
       .sum(:quantity)
-      .map do |food, quantity, *|
-        quantity -= food.quantity
-        { name: food.name, quantity:, unit: food.measurement_unit, price: quantity * food.price }
+      .map do |food, required, *|
+        required -= food.quantity
+        { name: food.name, quantity: required, unit: food.measurement_unit, price: required * food.price }
       end
     @items = @items.select { |item| (item[:quantity]).positive? }
   end
