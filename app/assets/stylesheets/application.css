@@ -14,14 +14,13 @@
  *= require_self
  */
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 section.new {
-    padding: 1em;
-    
+  padding: 1em;
 }
 
 .two-buttons {
