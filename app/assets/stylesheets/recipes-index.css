@@ -14,7 +14,7 @@ section.recipies-list a > h2 {
 }
 
 section.recipies-list > article {
-  min-width: 70vw;
+  width: 70vw;
 }
 
 section.recipies-list > article > a {

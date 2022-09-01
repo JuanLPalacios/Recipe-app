@@ -3,19 +3,20 @@ class RecipeFoodsController < ApplicationController
     @recipe = Recipe.find params[:recipe_id]
     @recipe_food = RecipeFood.new
   end
-
+  
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
-    @recipe_food.user = current_user
+    @recipe_food.recipe_id = params[:recipe_id]
     if @recipe_food.save
-      redirect_to recipe_foods_path
+      redirect_to recipe_path(params[:recipe_id])
     else
+      @recipe = Recipe.find params[:recipe_id]
       render :new, status: :unprocessable_entity
     end
   end
 
   def recipe_food_params
-    params.require(:recipe_food).permit(:quantity, :recipe_id, :food_id)
+    params.require(:recipe_food).permit(:quantity, :food_id)
   end
 
   def destroy
