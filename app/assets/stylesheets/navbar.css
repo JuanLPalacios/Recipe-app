@@ -10,3 +10,13 @@ header.navbar {
 header.navbar > nav {
   position: absolute;
 }
+
+header.navbar > nav > ul {
+  max-height: 0;
+  overflow: hidden;
+  transition: 1s;
+}
+
+header.navbar > nav:hover > ul {
+  max-height: 100vh;
+}
