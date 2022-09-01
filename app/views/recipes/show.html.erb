@@ -33,7 +33,10 @@
     <%= @recipe.description %>
   </p>
 </div>
-
+<div class="page-wrapper two-buttons">
+  <%= link_to "Generate shopping list", general_shopping_list_path(recipe: @recipe), class: 'button btn-blue' %>
+  <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe), class: 'button btn-blue' %>
+</div>
 <ul class="table">
   <li class="table-row table-header">
     <h5>Food</h5>
