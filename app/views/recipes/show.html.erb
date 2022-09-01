@@ -1,0 +1,59 @@
+<h2 class="page-title"><%= @recipe.name %></h2>
+<div class="page-wrapper preparation-public">
+  <h4 class="detail-badge">
+    Preparation time: 
+    <span>
+      <%= @recipe.preparetion_time %>
+    </span>
+  </h4>
+
+  <div class="switch-wrapper">
+    <label>Public</label>
+    <span class="switch">
+    <% if @recipe.public %>
+      <input type="checkbox" checked="true" disabled>
+    <%else%>
+      <input type="checkbox" disabled>
+    <% end %>
+      <span class="slider"></span>
+    </span>
+  </div>
+
+</div>
+
+<div class="page-wrapper time-description">
+  <h4 class="detail-badge">
+    Cooking time: 
+    <span>
+      <%= @recipe.cooking_time %>
+    </span>
+  </h4>
+
+  <p>
+    <%= @recipe.description %>
+  </p>
+</div>
+
+<ul class="table">
+  <li class="table-row table-header">
+    <h5>Food</h5>
+    <h5>Quantity</h5>
+    <h5>Value</h5>
+    <h5>Actions</h5>
+  </li>
+  <% @recipe.foods.each do |food| %>
+    <li class="table-row">
+      <span><%= food.name %></span>
+      <span><%= food.quantity %></span>
+      <span>Value<%= food.price %></span>
+      <div class="table-actions">
+        <%= link_to(new_food_path(food), class: 'button btn-blue') do %>
+          Modify
+        <% end %>
+        <%= button_to(foods_path(food), method: :delete, class: 'button btn-red') do %>
+          Remove
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
