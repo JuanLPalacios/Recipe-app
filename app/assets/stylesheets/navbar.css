@@ -5,6 +5,7 @@ header.navbar {
   display: flex;
   justify-content: right;
   height: 1.2rem;
+  z-index: 10;
 }
 
 header.navbar button {
@@ -22,6 +23,7 @@ header.navbar button:hover {
 
 header.navbar > nav {
   position: absolute;
+  background: #fff;
 }
 
 header.navbar > nav > ul {
