@@ -1,17 +1,37 @@
-<h1>Shopping List</h1>
-
-Amount of food items to buy: <%= @items.length %>
-<br/>
-Total value of food needed: <%= number_to_currency @items.inject(0) { |sum, item| sum + item[:price] } %>
-<br/>
-<br/>
-Food
-Quantity
-Price
-<br/>
-<% @items.each do |item| %>
-  <%= item[:name] %>
-  <%= sprintf('%g', item[:quantity]) %> <%= item[:unit] %>
-  <%= number_to_currency item[:price] %>
-  <br/>
-<% end %>
+<div class="shopping">
+  <h1>Shopping List</h1>
+  <section class="shopping-totals">
+    <div>
+      Amount of food items to buy: <%= @items.length %>
+    </div>
+    <div>
+      Total value of food needed: <%= number_to_currency @items.inject(0) { |sum, item| sum + item[:price] } %>
+    </div>
+  </section>
+  <section class="shopping-list">
+    <header>
+      <b>
+        Food
+      </b>
+      <b>
+        Quantity
+      </b>
+      <b>
+        Price
+      </b>
+    </header>
+    <% @items.each do |item| %>
+      <article>
+        <div>
+          <%= item[:name] %>
+        </div>
+        <div>
+          <%= sprintf('%g', item[:quantity]) %> <%= item[:unit] %>
+        </div>
+        <div>
+          <%= number_to_currency item[:price] %>
+        </div>
+      </article>
+    <% end %>
+  </section>
+</div>
