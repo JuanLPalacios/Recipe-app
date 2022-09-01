@@ -19,11 +19,17 @@
       Price
     </b>
   </header>
+  <% @items.each do |item| %>
+    <article>
+      <div>
+        <%= item[:name] %>
+      </div>
+      <div>
+        <%= sprintf('%g', item[:quantity]) %> <%= item[:unit] %>
+      </div>
+      <div>
+        <%= number_to_currency item[:price] %>
+      </div>
+    </article>
+  <% end %>
 </section>
-<br/>
-<% @items.each do |item| %>
-  <%= item[:name] %>
-  <%= sprintf('%g', item[:quantity]) %> <%= item[:unit] %>
-  <%= number_to_currency item[:price] %>
-  <br/>
-<% end %>
