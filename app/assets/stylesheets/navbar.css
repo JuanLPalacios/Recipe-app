@@ -1,0 +1,12 @@
+header.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: right;
+  height: 1.2rem;
+}
+
+header.navbar > nav {
+  position: absolute;
+}

@@ -1,8 +1,12 @@
-<header>
-    <% unless current_user.nil? %>
-        <%= current_user.name  %>
-    <% end %>
+<header class="navbar">
     <nav>
+        <div>
+            <% unless current_user.nil? %>
+                <%= current_user.name  %>
+            <% else %>
+                Menu
+            <% end %>
+        </div>
         <ul>
             <% unless current_user.nil? %>
                 <li>
