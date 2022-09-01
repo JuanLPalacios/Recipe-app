@@ -13,4 +13,5 @@
  *= require_tree .
  *= require_self
  */
+@import url(devise.css);
 @import url(recipes-index.css);
