@@ -13,6 +13,7 @@
 }
 
 .table-row span,
+.table-row h5,
 .table-row div {
   display: table-cell;
   border-bottom: 1px solid #ddd;
@@ -20,8 +21,10 @@
   padding: 0.5em 1em;
 }
 
-.table-header span {
+.table-header span,
+.table-header h5 {
   background-color: #efefef;
+  font-weight: 600;
 }
 
 .table-row span:first-child,
@@ -43,6 +46,7 @@
 .table-row .table-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5em;
 }
 
