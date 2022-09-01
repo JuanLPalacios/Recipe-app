@@ -1,0 +1,17 @@
+.page-title {
+  margin: 1em;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.page-wrapper {
+  width: calc(100% - 2em);
+  max-width: 1300px;
+  margin-inline: auto;
+}
+
+.page-wrapper .button {
+  float: right;
+  margin-bottom: 1em;
+  text-decoration: none;
+}
