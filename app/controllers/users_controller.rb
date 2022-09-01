@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def general_shopping_list
-    @items = current_user.recipe_foods
+    @items = (params[:recipe].nil? ?
+      current_user.recipe_foods :
+      current_user.recipe_foods.where(recipe_id: params[:recipe]))
       .group(:food)
       .sum(:quantity)
       .map do |food, required, *|

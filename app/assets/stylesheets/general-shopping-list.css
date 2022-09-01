@@ -19,6 +19,7 @@ section.shopping-list {
   border-right: none;
 }
 
+
 section.shopping-list > * {
   display: flex;
 }
@@ -35,6 +36,7 @@ section.shopping-list > * > * {
   border-right: solid;
   padding: 0 5px;
 }
+
 
 section.shopping-list > article > * {
   padding-block: 7px;
