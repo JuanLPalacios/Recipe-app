@@ -39,3 +39,15 @@ section.shopping-list > * > * {
 section.shopping-list > article > * {
   padding-block: 7px;
 }
+
+section.shopping-list > * > :nth-child(1) {
+  flex: 1 1 40px;
+}
+
+section.shopping-list > * > :nth-child(2) {
+  flex: 1 1 30px;
+}
+
+section.shopping-list > * > :nth-child(3) {
+  flex: 1 1 31px;
+}
