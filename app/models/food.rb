@@ -4,7 +4,7 @@ class Food < ApplicationRecord
   validates :price, comparison: { greater_than_or_equal_to: 0 }
   validates :quantity, comparison: { greater_than: 0 }
 
-  has_many :recipe_foods
+  has_many :recipe_foods, dependent: :delete_all
   has_many :recipes, through: :recipe_foods
   belongs_to :user
 end

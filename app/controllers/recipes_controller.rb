@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:public_recipes]
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.includes(:recipe_foods, recipe_foods: [:food]).find(params[:id])
   end
 
   def index
