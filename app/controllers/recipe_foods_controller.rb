@@ -3,7 +3,7 @@ class RecipeFoodsController < ApplicationController
     @recipe = Recipe.find params[:recipe_id]
     @recipe_food = RecipeFood.new
   end
-  
+
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe_food.recipe_id = params[:recipe_id]
