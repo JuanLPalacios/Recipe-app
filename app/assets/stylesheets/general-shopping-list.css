@@ -22,3 +22,7 @@ section.shopping-list {
 section.shopping-list > * {
   display: flex;
 }
+
+section.shopping-list > header {
+  background: lightgray;
+}
