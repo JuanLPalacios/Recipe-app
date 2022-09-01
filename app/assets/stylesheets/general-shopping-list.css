@@ -18,3 +18,7 @@ section.shopping-list {
   border: solid;
   border-right: none;
 }
+
+section.shopping-list > * {
+  display: flex;
+}
