@@ -5,6 +5,14 @@ section.recipies-list {
   gap: 20px;
 }
 
+
+section.recipies-list a > div {
+  flex: 1 1 auto;
+}
+
+section.recipies-list a > h2 {
+  margin-block: 0 27px;
+}
 section.recipies-list > article {
   min-width: 70vw;
 }
@@ -18,14 +26,6 @@ section.recipies-list > article > a {
   padding: 20px;
   border: solid 2px #000;
   min-height: 6rem;
-}
-
-section.recipies-list a > div {
-  flex: 1 1 auto;
-}
-
-section.recipies-list a > h2 {
-  margin-block: 0 27px;
 }
 
 section.recipies-list > article > .actions {
