@@ -1,0 +1,17 @@
+<h1>Shopping List</h1>
+
+Amount of food items to buy: <%= @items.length %>
+<br/>
+Total value of food needed: <%= number_to_currency @items.inject(0) { |sum, item| sum + item[:price] } %>
+<br/>
+<br/>
+Food
+Quantity
+Price
+<br/>
+<% @items.each do |item| %>
+  <%= item[:name] %>
+  <%= sprintf('%g', item[:quantity]) %> <%= item[:unit] %>
+  <%= number_to_currency item[:price] %>
+  <br/>
+<% end %>
