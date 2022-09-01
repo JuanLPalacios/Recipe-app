@@ -26,3 +26,7 @@ section.shopping-list > * {
 section.shopping-list > header {
   background: lightgray;
 }
+
+section.shopping-list > :nth-child(2n) {
+  background: ghostwhite;
+}
