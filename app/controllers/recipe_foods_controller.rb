@@ -32,7 +32,7 @@ class RecipeFoodsController < ApplicationController
   def update
     @recipe = RecipeFood.find(params[:id])
     if @recipe.update(recipe_food_params)
-      redirect_to recipe_foods_path(params[:recipe_id])
+      redirect_to recipe_path(params[:recipe_id])
     else
       render :edit, status: :unprocessable_entity
     end
