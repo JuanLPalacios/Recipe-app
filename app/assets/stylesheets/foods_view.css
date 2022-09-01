@@ -6,12 +6,12 @@
 
 .page-wrapper {
   width: calc(100% - 2em);
+  margin: 1em 0;
   max-width: 1300px;
   margin-inline: auto;
 }
 
 .page-wrapper .button {
-  float: right;
   margin-bottom: 1em;
   text-decoration: none;
 }

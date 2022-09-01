@@ -1,0 +1,15 @@
+<section class="new">
+  <%= form_for @recipe do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :preparetion_time %>
+    <%= form.number_field :preparetion_time %>
+    <%= form.label :cooking_time %>
+    <%= form.number_field :cooking_time %>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+    <%= form.label :public %>
+    <%= form.check_box :public %>
+    <%= form.submit 'Create' %>
+  <% end %>
+</section>

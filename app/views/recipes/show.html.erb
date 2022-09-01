@@ -33,27 +33,37 @@
     <%= @recipe.description %>
   </p>
 </div>
-
+<div class="page-wrapper two-buttons">
+  <% if can? :manage, @recipe %>
+    <%= link_to "Generate shopping list", general_shopping_list_path(recipe: @recipe), class: 'button btn-blue' %>
+    <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe), class: 'button btn-blue' %>
+  <%end%>
+</div>
 <ul class="table">
   <li class="table-row table-header">
     <h5>Food</h5>
     <h5>Quantity</h5>
     <h5>Value</h5>
+    <% if can? :destroy, @recipe %>
     <h5>Actions</h5>
+    <%end%>
   </li>
-  <% @recipe.foods.each do |food| %>
+  <% @recipe.recipe_foods.each do |rec_food| %>
+    <% food = rec_food.food %>
     <li class="table-row">
       <span><%= food.name %></span>
-      <span><%= food.quantity %></span>
-      <span>Value<%= food.price %></span>
-      <div class="table-actions">
-        <%= link_to(new_food_path(food), class: 'button btn-blue') do %>
-          Modify
-        <% end %>
-        <%= button_to(foods_path(food), method: :delete, class: 'button btn-red') do %>
-          Remove
-        <% end %>
-      </div>
+      <span><%= rec_food.quantity %></span>
+      <span>$<%= food.price %></span>
+      <% if can? :destroy, @recipe %>
+        <div class="table-actions">
+          <%= link_to(edit_recipe_recipe_food_path(@recipe, rec_food), class: 'button btn-blue') do %>
+            Modify
+          <% end %>
+          <%= button_to(recipe_recipe_food_path(@recipe, rec_food), method: :delete, class: 'button btn-red') do %>
+            Remove
+          <% end %>
+        </div>
+      <% end %>
     </li>
   <% end %>
 </ul>
