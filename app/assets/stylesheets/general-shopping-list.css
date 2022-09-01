@@ -9,3 +9,12 @@ section.shopping-totals {
   gap: 2rem;
   margin-bottom: 3rem;
 }
+
+section.shopping-list {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  width: 50vw;
+  border: solid;
+  border-right: none;
+}
