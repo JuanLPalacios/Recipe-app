@@ -13,7 +13,7 @@
   justify-content: space-between;
   gap: 1em;
   border-radius: 0.5em;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
 }
 
 .recipe-card-section {
@@ -43,9 +43,9 @@
 }
 
 .recipe-card-author {
-  color: #333333;
+  color: #333;
 }
 
 .recipe-card-author span {
-  color: #666666;
+  color: #666;
 }
