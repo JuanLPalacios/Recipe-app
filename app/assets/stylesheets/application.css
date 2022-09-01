@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section.new {
+    padding: 1em;
+    
+}
 @import url(reset.css);
 @import url(tables.css);
 @import url(buttons.css);
