@@ -3,6 +3,7 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    can :destroy, Recipe, user:
+    can :destroy, Recipe, user: user
+    can :destroy, Food, 'user' => user
   end
 end
