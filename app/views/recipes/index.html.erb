@@ -1,0 +1,24 @@
+
+<div class="page-wrapper">
+  <%= link_to "Add recipe", new_recipe_path, class: 'button btn-green' %>
+</div>
+<section class="recipies-list">
+  <% @recipes.each do |recipe| %>
+    <article>
+      <%= link_to recipe do %>
+        <h2>
+          <%= recipe.name %>
+        </h2>
+        <div>
+          <%= recipe.description %>
+        </div>
+      <% end %>
+      <%# Deletete button must be oudside of link to work %>
+      <% if can? :destroy, recipe %>
+        <div class="actions">
+          <%= button_to "Delete", recipe, method: :delete, confirm: "Are you sure You want to delete this recipe?" %>
+        </div>
+      <% end %>
+    </article>
+  <% end %>
+</section>

@@ -1,0 +1,37 @@
+<header class="navbar">
+    <nav>
+        <div>
+            <% unless current_user.nil? %>
+                <%= current_user.name  %>
+            <% else %>
+                Menu
+            <% end %>
+        </div>
+        <ul>
+            <% unless current_user.nil? %>
+                <li>
+                    <%= button_to 'Log out',  destroy_user_session_path, method: :delete  %>
+                </li>
+                <li>
+                    <%= link_to 'my foods', foods_path %>
+                </li>
+                <li>
+                    <%= link_to 'my recipess', recipes_path %>
+                </li>
+                <li>
+                    <%= link_to 'general_shopping', general_shopping_list_path %>
+                </li>
+            <% else %>
+                <li>
+                    <%= link_to 'Login', user_session_path %>
+                </li>
+                <li>
+                    <%= link_to 'Registrate', new_user_registration_path %>
+                </li>
+            <% end %>
+            <li>
+                <%= link_to 'public recipes', public_recipes_path %>
+            </li>
+        </ul>
+    </nav>
+</header>

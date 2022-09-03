@@ -1,0 +1,60 @@
+.table {
+  display: table;
+  margin-inline: auto;
+  width: calc(100% - 2em);
+  max-width: 1300px;
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+}
+
+.table-row {
+  display: table-row;
+  width: 100%;
+}
+
+.table-row span,
+.table-row h5,
+.table-row div {
+  display: table-cell;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  padding: 0.5em 1em;
+}
+
+.table-header span,
+.table-header h5 {
+  background-color: #efefef;
+  font-weight: 600;
+}
+
+.table-row span:first-child,
+.table-row div:first-child {
+  border-left: none;
+}
+
+.table-row:last-child span,
+.table-row:last-child div {
+  border-bottom: none;
+}
+
+.table-header {
+  position: sticky;
+  top: 0;
+  font-weight: 600;
+}
+
+.table-row .table-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.table-row .table-actions form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}

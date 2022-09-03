@@ -1,0 +1,69 @@
+<h2 class="page-title"><%= @recipe.name %></h2>
+<div class="page-wrapper preparation-public">
+  <h4 class="detail-badge">
+    Preparation time: 
+    <span>
+      <%= @recipe.preparetion_time %>
+    </span>
+  </h4>
+
+  <div class="switch-wrapper">
+    <label>Public</label>
+    <span class="switch">
+    <% if @recipe.public %>
+      <input type="checkbox" checked="true" disabled>
+    <%else%>
+      <input type="checkbox" disabled>
+    <% end %>
+      <span class="slider"></span>
+    </span>
+  </div>
+
+</div>
+
+<div class="page-wrapper time-description">
+  <h4 class="detail-badge">
+    Cooking time: 
+    <span>
+      <%= @recipe.cooking_time %>
+    </span>
+  </h4>
+
+  <p>
+    <%= @recipe.description %>
+  </p>
+</div>
+<div class="page-wrapper two-buttons">
+  <% if can? :manage, @recipe %>
+    <%= link_to "Generate shopping list", general_shopping_list_path(recipe: @recipe), class: 'button btn-blue' %>
+    <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe), class: 'button btn-blue' %>
+  <%end%>
+</div>
+<ul class="table">
+  <li class="table-row table-header">
+    <h5>Food</h5>
+    <h5>Quantity</h5>
+    <h5>Value</h5>
+    <% if can? :destroy, @recipe %>
+    <h5>Actions</h5>
+    <%end%>
+  </li>
+  <% @recipe.recipe_foods.each do |rec_food| %>
+    <% food = rec_food.food %>
+    <li class="table-row">
+      <span><%= food.name %></span>
+      <span><%= rec_food.quantity %></span>
+      <span>$<%= food.price %></span>
+      <% if can? :destroy, @recipe %>
+        <div class="table-actions">
+          <%= link_to(edit_recipe_recipe_food_path(@recipe, rec_food), class: 'button btn-blue') do %>
+            Modify
+          <% end %>
+          <%= button_to(recipe_recipe_food_path(@recipe, rec_food), method: :delete, class: 'button btn-red') do %>
+            Remove
+          <% end %>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
