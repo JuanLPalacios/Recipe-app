@@ -1,37 +1,45 @@
+header.navbar .logo {
+  width: 50px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header.navbar .logo h1 {
+  font-family: inherit;
+}
+
 header.navbar {
   position: fixed;
   width: 100%;
   top: 0;
   display: flex;
-  justify-content: right;
-  height: 1.2rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
   z-index: 10;
-}
-
-header.navbar button {
-  border: none;
-  background: none;
-  text-decoration: underline;
-  color: rgb(0, 0, 238);
-  display: inline;
-  padding: 0;
-}
-
-header.navbar button:hover {
-  color: rgb(85, 26, 139);
-}
-
-header.navbar > nav {
-  position: absolute;
-  background: #fff;
+  background: var(--primary-color);
+  padding: 0 20px 0 10px;
 }
 
 header.navbar > nav > ul {
+  position: fixed;
+  width: 100%;
+  right: 0;
+  top: 60px;
   max-height: 0;
   overflow: hidden;
-  transition: 1s;
+  transition: 0.5s;
+  padding: 0 10px;
+  background: var(--primary-color);
 }
 
-header.navbar > nav:hover > ul {
+header.navbar ul > li {
+  padding: 5px 0;
+}
+
+header.navbar > nav:focus-within > ul {
   max-height: 100vh;
 }
