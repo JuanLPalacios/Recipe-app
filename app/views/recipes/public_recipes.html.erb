@@ -9,25 +9,25 @@
             <%= recipe.name %>
           <% end %>
         </h3>
-        <h5 class="recipe-card-author">
+        <div class="recipe-card-author">
           <span>By</span>
           <%= recipe.user.name %>
-        </h5>
+        </div>
       </div>
       <div class="recipe-card-section">
-        <h4 class="detail-badge">
+        <div class="detail-badge">
           Total food items: 
           <span>
             <%= recipe.foods.length %>
           </span>
-        </h4>
+        </div>
 
-        <h4 class="detail-badge">
+        <div class="detail-badge">
           Total price: 
           <span>
             <%= recipe.recipe_foods.inject(0) { |sum, recipe_food| sum + recipe_food.quantity*recipe_food.food.price } %>
           </span>
-        </h4>
+        </div>
       </div>
     </li>
   <% end %>
