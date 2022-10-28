@@ -1,18 +1,78 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+:root {
+  --title-font: "Permanent Marker", cursive;
+  --primary-color: #fff;
+  --secondary-color: #d31b1b;
+  --primary-text-color: #272a31;
+  --secondary-text-color: #f1fcff;
+  --text-font-size: 1em;
+  --h1-font-size: 1.8rem;
+  --h2-font-size: 1.4rem;
+  --h3-font-size: 1.17rem;
+  --h4-font-size: 1.09rem;
+  --h5-font-size: 0.9rem;
+  --h6-font-size: 0.75rem;
+  --text-font-size-md: 1em;
+  --h1-font-size-md: 4.5rem;
+  --h2-font-size-md: 3rem;
+  --h3-font-size-md: 2.3rem;
+  --h4-font-size-md: 1.8rem;
+  --h5-font-size-md: 1.5rem;
+  --h6-font-size-md: 0.75rem;
+}
+
+body {
+  color: var(--primary-text-color);
+}
+
+main {
+  padding-top: 60px;
+}
+
+a,
+.a {
+  border: none;
+  background: none;
+  text-decoration: underline;
+  color: inherit;
+  display: inline;
+  padding: 0;
+}
+
+a:hover,
+.a:hover {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--title-font);
+}
+
 form {
   display: flex;
   flex-direction: column;

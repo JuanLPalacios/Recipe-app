@@ -1,16 +1,24 @@
 <header class="navbar">
+    <%= link_to public_recipes_path, class:'logo' do %>
+        <%= image_tag 'Logo.svg', alt:'Recipe App' %>
+        <h1>RecipeApp</h1>
+    <% end %>
     <nav>
         <div>
             <% unless current_user.nil? %>
                 <%= current_user.name  %>
             <% else %>
-                Menu
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                </a>
             <% end %>
         </div>
         <ul>
             <% unless current_user.nil? %>
                 <li>
-                    <%= button_to 'Log out',  destroy_user_session_path, method: :delete  %>
+                    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'a'  %>
                 </li>
                 <li>
                     <%= link_to 'my foods', foods_path %>

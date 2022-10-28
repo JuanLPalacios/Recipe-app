@@ -1,11 +1,16 @@
-.button {
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+.button,
+button,
+input[type='submit'] {
   padding: 0.3em 0.9em;
   border-radius: 0.5em;
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-decoration: none;
 }
 
-.button:hover { cursor: pointer; }
+.button:hover,
+button:hover { cursor: pointer; }
 
 .btn-red {
   background-color: #f44040;
