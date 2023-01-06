@@ -1,0 +1,29 @@
+<li class="recipe-card">
+  <%= link_to recipe do %>
+      <img src="https://picsum.photos/id/1080/400/400" alt="" class="recipe-img">
+  <% end %>
+  <div class="recipe-card-section">
+    <h3 class="recipe-card-title">
+      <%= link_to recipe do %>
+        <%= recipe.name %>
+      <% end %>
+    </h3>
+    <div class="recipe-card-author">
+      <span>By</span>
+      <%= recipe.user.name %>
+    </div>
+    <div class="detail-badge">
+      Total food items: 
+      <span>
+        <%= recipe.foods.length %>
+      </span>
+    </div>
+
+    <div class="detail-badge">
+      Total price: 
+      <span>
+        <%= recipe.recipe_foods.inject(0) { |sum, recipe_food| sum + recipe_food.quantity*recipe_food.food.price } %>
+      </span>
+    </div>
+  </div>
+</li>

@@ -1,34 +1,5 @@
 <h2 class="page-title">Public Recipes</h2>
 
 <ul class="page-wrapper recipes-container">
-  <% @recipes.each do |recipe| %>
-    <li class="recipe-card">
-      <div class="recipe-card-section">
-        <h3 class="recipe-card-title">
-          <%= link_to recipe do %>
-            <%= recipe.name %>
-          <% end %>
-        </h3>
-        <div class="recipe-card-author">
-          <span>By</span>
-          <%= recipe.user.name %>
-        </div>
-      </div>
-      <div class="recipe-card-section">
-        <div class="detail-badge">
-          Total food items: 
-          <span>
-            <%= recipe.foods.length %>
-          </span>
-        </div>
-
-        <div class="detail-badge">
-          Total price: 
-          <span>
-            <%= recipe.recipe_foods.inject(0) { |sum, recipe_food| sum + recipe_food.quantity*recipe_food.food.price } %>
-          </span>
-        </div>
-      </div>
-    </li>
-  <% end %>
+  <%= render @recipes %>
 </ul>
